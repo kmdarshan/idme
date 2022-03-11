@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7DB9D69E27DAB19B007AE541 /* Id_MeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9D69D27DAB19B007AE541 /* Id_MeApp.swift */; };
-		7DB9D6A027DAB19B007AE541 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9D69F27DAB19B007AE541 /* ContentView.swift */; };
 		7DB9D6A227DAB19C007AE541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB9D6A127DAB19C007AE541 /* Assets.xcassets */; };
 		7DB9D6A527DAB19C007AE541 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB9D6A427DAB19C007AE541 /* Preview Assets.xcassets */; };
 		7DB9D6AF27DAB19C007AE541 /* Id_MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9D6AE27DAB19C007AE541 /* Id_MeTests.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		7DB9D69A27DAB19B007AE541 /* Id.Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Id.Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB9D69D27DAB19B007AE541 /* Id_MeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id_MeApp.swift; sourceTree = "<group>"; };
-		7DB9D69F27DAB19B007AE541 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7DB9D6A127DAB19C007AE541 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DB9D6A427DAB19C007AE541 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7DB9D6AA27DAB19C007AE541 /* Id.MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Id.MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +119,6 @@
 			children = (
 				7DB9D6D827DB384C007AE541 /* Id-Me-Info.plist */,
 				7DB9D69D27DAB19B007AE541 /* Id_MeApp.swift */,
-				7DB9D69F27DAB19B007AE541 /* ContentView.swift */,
 				7DB9D6A127DAB19C007AE541 /* Assets.xcassets */,
 				7DB9D6A327DAB19C007AE541 /* Preview Content */,
 			);
@@ -360,7 +357,6 @@
 				7DB9D6EB27DBDA63007AE541 /* AboutView.swift in Sources */,
 				7DB9D6CB27DB209A007AE541 /* Purchase.swift in Sources */,
 				7DB9D6E627DBD0B6007AE541 /* PurchaseDetailsView.swift in Sources */,
-				7DB9D6A027DAB19B007AE541 /* ContentView.swift in Sources */,
 				7DB9D6C827DAB3F6007AE541 /* Profile.swift in Sources */,
 				7DB9D69E27DAB19B007AE541 /* Id_MeApp.swift in Sources */,
 				7DB9D6E027DBC63D007AE541 /* ProfileSubDetailView.swift in Sources */,
