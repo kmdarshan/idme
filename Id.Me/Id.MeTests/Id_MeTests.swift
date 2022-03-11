@@ -31,4 +31,14 @@ class Id_MeTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+	
+	func testPurchaseHistoryDate() {
+		// Need to add test here to
+		let vm = ProfileViewModel()
+	}
+	
+	func testPurchaseHistoryDescription() {
+		// Need to add test here to
+		let vm = ProfileViewModel()
+	}
 }
