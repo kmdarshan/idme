@@ -10,8 +10,8 @@ import SwiftUI
 struct PurchaseDetailsView: View {
     @State var showAdditionalDetailsOnClick = false
     let vm = PurchaseHistoryViewModel()
-    let purchase: Purchase
-    init(purchase: Purchase) {
+    let purchase: Transaction
+    init(purchase: Transaction) {
         self.purchase = purchase
     }
 
@@ -56,8 +56,8 @@ struct PurchaseDetailsView: View {
     }
 }
 
-struct PurchaseDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PurchaseDetailsView(purchase: Purchase.samplePurchases![0])
-    }
-}
+//struct PurchaseDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PurchaseDetailsView(purchase: [Transaction.samplePurchases![0]])
+//    }
+//}

@@ -53,7 +53,7 @@ struct Downloader {
         }
     }
 
-    func downloadPurchaseHistory() async -> Result<[Purchase], DownloadError> {
+    func downloadPurchaseHistory() async -> Result<[Transaction], DownloadError> {
         let url = URL(string: "https://idme-takehome.proxy.beeceptor.com/purchases/U13023932?page=1")!
         do {
             let (data, urlResponse) = try await URLSession.shared.data(from: url, delegate: nil)
@@ -61,8 +61,8 @@ struct Downloader {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
                 do {
-                    let purchases = try jsonDecoder.decode([Purchase].self, from: data)
-                    return .success(purchases)
+                    let transactions = try jsonDecoder.decode([Purchase].self, from: data)
+                    return .success(transactions)
                 } catch {
                     print(error)
                     return .failure(.decoderDownloadError)
@@ -73,4 +73,32 @@ struct Downloader {
         }
         return .failure(.networkDownloadError)
     }
+	
+	
+	func downloadRefundHistory() async -> Result<[Transaction], DownloadError> {
+		let url = URL(string: "https://idme-takehome.proxy.beeceptor.com/refunds/U13023932")!
+		do {
+			let (data, urlResponse) = try await URLSession.shared.data(from: url, delegate: nil)
+			if let httpResponse = urlResponse as? HTTPURLResponse, (200 ... 299).contains(httpResponse.statusCode) {
+				let jsonDecoder = JSONDecoder()
+				jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
+				do {
+					let transactions = try jsonDecoder.decode([Refund].self, from: data)
+					var newTransactions: [Transaction] = [Transaction]()
+					for (_, transaction) in transactions.enumerated() {
+						var newTransaction = transaction
+						newTransaction.type = .purchase
+						newTransactions.append(newTransaction)
+					}
+					return .success(newTransactions)
+				} catch {
+					print(error)
+					return .failure(.decoderDownloadError)
+				}
+			}
+		} catch {
+			return .failure(.networkDownloadError)
+		}
+		return .failure(.networkDownloadError)
+	}
 }
